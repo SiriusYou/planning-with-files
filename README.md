@@ -7,6 +7,10 @@ A Claude Code skill that transforms your workflow to use persistent markdown fil
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Claude Code Skill](https://img.shields.io/badge/Claude%20Code-Skill-blue)](https://docs.anthropic.com/en/docs/agents-and-tools/claude-code/skills)
 
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=OthmanAdi/planning-with-files&type=Date)](https://star-history.com/#OthmanAdi/planning-with-files&Date)
+
 ---
 
 ## Why This Skill?
@@ -160,6 +164,12 @@ Contributions welcome! Please:
 ## License
 
 MIT License — feel free to use, modify, and distribute.
+
+## Thank You
+
+To everyone who starred, forked, and shared this skill — thank you. This project blew up in less than 24 hours, and the support from the community has been incredible.
+
+If this skill helps you work smarter, that's all I wanted.
 
 ---
 
