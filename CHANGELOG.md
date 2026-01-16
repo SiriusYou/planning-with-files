@@ -2,6 +2,36 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.2.0] - 2026-01-16
+
+### Added
+
+- **Kilo Code Support**
+  - Added Kilo Code mode compatibility for the planning-with-files skill
+  - Created `.kilocode/rules/planning-with-files.md` with mode-specific rules
+  - Added `docs/kilocode.md` documentation for Kilo Code users
+  - Enables seamless integration with Kilo Code's planning workflow
+
+- **Windows PowerShell Scripts**
+  - Added `skills/planning-with-files/scripts/init-session.ps1` - PowerShell version of init-session script for Windows
+  - Added `skills/planning-with-files/scripts/check-complete.ps1` - PowerShell version of check-complete script for Windows
+  - Improves Windows user experience with native PowerShell support
+
+### Changed
+
+- Updated documentation to support both Claude Code and Kilo Code environments
+- Enhanced template compatibility across different AI coding assistants
+- Updated `.gitignore` to include `findings.md` and `progress.md` in the development planning files section
+
+### Files Added
+
+- `.kilocode/rules/planning-with-files.md` - Kilo Code mode rules
+- `docs/kilocode.md` - Kilo Code-specific documentation
+- `skills/planning-with-files/scripts/init-session.ps1` - PowerShell session initialization script
+- `skills/planning-with-files/scripts/check-complete.ps1` - PowerShell task completion verification script
+
+---
+
 ## [2.1.2] - 2026-01-11
 
 ### Fixed
@@ -115,7 +145,6 @@ If you still experience issues after updating:
 
 - **New Documentation**
   - `CHANGELOG.md` - This file
-  - `MIGRATION.md` - Guide for upgrading from v1.x
 
 - **Enhanced SKILL.md**
   - The 2-Action Rule (save findings after every 2 view/browser operations)

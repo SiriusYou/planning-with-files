@@ -1,67 +1,16 @@
----
-name: planning-with-files
-version: "2.2.0"
-description: Implements Manus-style file-based planning for complex tasks. Creates task_plan.md, findings.md, and progress.md. Use when starting complex multi-step tasks, research projects, or any task requiring >5 tool calls.
-user-invocable: true
-allowed-tools:
-  - Read
-  - Write
-  - Edit
-  - Bash
-  - Glob
-  - Grep
-  - WebFetch
-  - WebSearch
-hooks:
-  SessionStart:
-    - hooks:
-        - type: command
-          command: "echo '[planning-with-files] Ready. Auto-activates for complex tasks, or invoke manually with /planning-with-files'"
-  PreToolUse:
-    - matcher: "Write|Edit|Bash"
-      hooks:
-        - type: command
-          command: "cat task_plan.md 2>/dev/null | head -30 || true"
-  PostToolUse:
-    - matcher: "Write|Edit"
-      hooks:
-        - type: command
-          command: "echo '[planning-with-files] File updated. If this completes a phase, update task_plan.md status.'"
-  Stop:
-    - hooks:
-        - type: command
-          command: "${CLAUDE_PLUGIN_ROOT}/scripts/check-complete.sh"
----
-
 # Planning with Files
 
 Work like Manus: Use persistent markdown files as your "working memory on disk."
-
-## Important: Where Files Go
-
-When using this skill:
-
-- **Templates** are stored in the skill directory at `${CLAUDE_PLUGIN_ROOT}/templates/`
-- **Your planning files** (`task_plan.md`, `findings.md`, `progress.md`) should be created in **your project directory** — the folder where you're working
-
-| Location | What Goes There |
-|----------|-----------------|
-| Skill directory (`${CLAUDE_PLUGIN_ROOT}/`) | Templates, scripts, reference docs |
-| Your project directory | `task_plan.md`, `findings.md`, `progress.md` |
-
-This ensures your planning files live alongside your code, not buried in the skill installation folder.
 
 ## Quick Start
 
 Before ANY complex task:
 
-1. **Create `task_plan.md`** in your project — Use [templates/task_plan.md](templates/task_plan.md) as reference
-2. **Create `findings.md`** in your project — Use [templates/findings.md](templates/findings.md) as reference
-3. **Create `progress.md`** in your project — Use [templates/progress.md](templates/progress.md) as reference
+1. **Create `task_plan.md`** — Phase tracking and progress
+2. **Create `findings.md`** — Research and discoveries
+3. **Create `progress.md`** — Session log and test results
 4. **Re-read plan before decisions** — Refreshes goals in attention window
 5. **Update after each phase** — Mark complete, log errors
-
-> **Note:** All three planning files should be created in your current working directory (your project root), not in the skill's installation folder.
 
 ## The Core Pattern
 
@@ -164,6 +113,20 @@ If you can answer these, your context management is solid:
 | What have I learned? | findings.md |
 | What have I done? | progress.md |
 
+## Manus Principles
+
+### Principle 1: Filesystem as External Memory
+Store large content in files, keep only paths in context. Agent can "look up" information when needed.
+
+### Principle 2: Attention Manipulation
+After ~50 tool calls, models forget original goals ("lost in the middle" effect). Re-reading `task_plan.md` brings goals back into the attention window.
+
+### Principle 3: Keep Failure Traces
+Keep failed actions in the plan file. The model updates its understanding when seeing failures. Error recovery is "one of the clearest signals of TRUE agentic behavior."
+
+### Principle 4: Avoid Few-Shot Overfitting
+Vary phrasings slightly. Don't copy-paste patterns blindly. Uniformity breeds fragility.
+
 ## When to Use This Pattern
 
 **Use for:**
@@ -178,26 +141,6 @@ If you can answer these, your context management is solid:
 - Single-file edits
 - Quick lookups
 
-## Templates
-
-Copy these templates to start:
-
-- [templates/task_plan.md](templates/task_plan.md) — Phase tracking
-- [templates/findings.md](templates/findings.md) — Research storage
-- [templates/progress.md](templates/progress.md) — Session logging
-
-## Scripts
-
-Helper scripts for automation:
-
-- `scripts/init-session.sh` — Initialize all planning files
-- `scripts/check-complete.sh` — Verify all phases complete
-
-## Advanced Topics
-
-- **Manus Principles:** See [reference.md](reference.md)
-- **Real Examples:** See [examples.md](examples.md)
-
 ## Anti-Patterns
 
 | Don't | Do Instead |
@@ -208,4 +151,3 @@ Helper scripts for automation:
 | Stuff everything in context | Store large content in files |
 | Start executing immediately | Create plan file FIRST |
 | Repeat failed actions | Track attempts, mutate approach |
-| Create files in skill directory | Create files in your project |
