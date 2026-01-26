@@ -2,6 +2,34 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.8.0] - 2026-01-26
+
+### Added
+
+- **Continue IDE Support** (PR #56 by @murphyXu)
+  - Added Continue.dev integration for VS Code and JetBrains IDEs
+  - Created `.continue/skills/planning-with-files/` skill bundle
+  - Created `.continue/prompts/planning-with-files.prompt` slash command (Chinese)
+  - Added `docs/continue.md` installation guide
+  - Added `scripts/check-continue.sh` validator
+  - Full templates, scripts, and references included
+
+### Fixed
+
+- **POSIX sh Compatibility** (PR #57 by @SaladDay)
+  - Fixed Stop hook failures on Debian/Ubuntu systems using dash as `/bin/sh`
+  - Replaced bash-only syntax (`[[`, `&>`) with POSIX-compliant constructs
+  - Added shell-agnostic Windows detection using `uname -s` and `$OS`
+  - Applied fix to all 5 IDE-specific SKILL.md files
+  - Addresses issue reported by @aqlkzf in #32
+
+### Thanks
+
+- @murphyXu for Continue IDE integration (PR #56)
+- @SaladDay for POSIX sh compatibility fix (PR #57)
+
+---
+
 ## [2.7.1] - 2026-01-22
 
 ### Fixed

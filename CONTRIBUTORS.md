@@ -39,6 +39,19 @@ These amazing people have contributed code, documentation, or significant improv
   - Updated documentation for multi-IDE support
   - **Impact:** Windows compatibility and IDE ecosystem expansion
 
+- **[@SaladDay](https://github.com/SaladDay)** - [PR #57](https://github.com/OthmanAdi/planning-with-files/pull/57)
+  - Fixed Stop hook POSIX sh compatibility for Debian/Ubuntu
+  - Replaced bashisms (`[[`, `&>`) with POSIX constructs
+  - Added shell-agnostic Windows detection using `uname -s`
+  - **Impact:** Fixes hook failures on systems using dash as `/bin/sh`
+
+- **[@murphyXu](https://github.com/murphyXu)** - [PR #56](https://github.com/OthmanAdi/planning-with-files/pull/56)
+  - Added Continue IDE integration (VS Code / JetBrains)
+  - Created `.continue/skills/` and `.continue/prompts/` structure
+  - Added Chinese language slash command prompt
+  - Created `docs/continue.md` installation guide
+  - **Impact:** Expands IDE support to Continue.dev ecosystem
+
 ### Other Contributors
 
 - **[@tobrun](https://github.com/tobrun)** - [PR #3](https://github.com/OthmanAdi/planning-with-files/pull/3)
@@ -94,4 +107,4 @@ If you've contributed and don't see your name here, please open an issue! We wan
 
 **Total Contributors:** 10+ and growing!
 
-*Last updated: January 17, 2026*
+*Last updated: January 26, 2026*

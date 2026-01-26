@@ -18,7 +18,7 @@ A Claude Code plugin that transforms your workflow to use persistent markdown fi
 [![Cursor Skills](https://img.shields.io/badge/Cursor-Skills-purple)](https://docs.cursor.com/context/skills)
 [![Kilocode Skills](https://img.shields.io/badge/Kilocode-Skills-orange)](https://kilo.ai/docs/agent-behavior/skills)
 [![Gemini CLI](https://img.shields.io/badge/Gemini%20CLI-Skills-4285F4)](https://geminicli.com/docs/cli/skills/)
-[![Version](https://img.shields.io/badge/version-2.7.1-brightgreen)](https://github.com/OthmanAdi/planning-with-files/releases)
+[![Version](https://img.shields.io/badge/version-2.8.0-brightgreen)](https://github.com/OthmanAdi/planning-with-files/releases)
 [![SkillCheck Validated](https://img.shields.io/badge/SkillCheck-Validated-4c1)](https://getskillcheck.com)
 
 ## Quick Install
@@ -86,7 +86,8 @@ See [docs/installation.md](docs/installation.md) for all installation methods.
 
 | Version | Features | Install |
 |---------|----------|---------|
-| **v2.7.1** (current) | Dynamic Python detection fix | `claude plugins install OthmanAdi/planning-with-files` |
+| **v2.8.0** (current) | Continue IDE support, POSIX sh compatibility fix | `claude plugins install OthmanAdi/planning-with-files` |
+| **v2.7.1** | Dynamic Python detection fix | See [releases](https://github.com/OthmanAdi/planning-with-files/releases) |
 | **v2.7.0** | Gemini CLI support | See [releases](https://github.com/OthmanAdi/planning-with-files/releases) |
 | **v2.6.0** | Start command (`/planning-with-files:start`), path resolution fix | See [releases](https://github.com/OthmanAdi/planning-with-files/releases) |
 | **v2.5.0** | Fixed autocomplete - SKILL.md matches Anthropic format | See [releases](https://github.com/OthmanAdi/planning-with-files/releases) |
