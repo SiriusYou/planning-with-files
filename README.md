@@ -251,7 +251,8 @@ planning-with-files/
 └── README.md
 ```
 
-## Supported IDEs
+<details>
+<summary><strong>🛠️ Supported IDEs (14 Platforms)</strong></summary>
 
 | IDE | Status | Installation Guide | Format |
 |-----|--------|-------------------|--------|
@@ -271,6 +272,8 @@ planning-with-files/
 | Pi Agent | ✅ Full Support | [Pi Agent Setup](docs/pi-agent.md) | Agent Skills |
 
 > **Note:** If your IDE uses the legacy Rules system instead of Skills, see the [`legacy-rules-support`](https://github.com/OthmanAdi/planning-with-files/tree/legacy-rules-support) branch.
+
+</details>
 
 ## Documentation
 
